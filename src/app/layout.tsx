@@ -4,6 +4,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
 import { Geist_Mono, Inter } from "next/font/google";
 
+import { TooltipProvider } from "~/components/ui/tooltip";
 import { cn } from "~/lib/utils";
 
 const inter = Inter({
@@ -26,7 +27,7 @@ function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     <ClerkProvider>
       <html lang="en">
         <body className={cn(inter.variable, geistMono.variable, "antialiased")}>
-          {children}
+          <TooltipProvider>{children}</TooltipProvider>
         </body>
       </html>
     </ClerkProvider>
